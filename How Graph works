@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+void addEdge(vector<int> adj[], int u, int v){
+  adj[u].push_back(v);
+  adj[v].push_back(u);
+
+}
+
+int main(int argc, const char * argv[]) {
+vector<int>x;
+ int y[4];
+ x.push_back(5);
+ cout<<x[0]<<endl;
+ y[0] = 1;
+ cout<< y[0]<<endl;
+
+ vector<int> adj[6];//vetices, so over it has 6 vertices. which connects one to another one. each of these vertices is a vetor 
+
+ adj[1].push_back(2);//1->2
+ adj[1].push_back(5);//1->5 we are actually stores the vertifes.
+ adj[2].push_back(5);
+ adj[2].push_back(1);
+ adj[2].push_back(3);
+ adj[2].push_back(4);
+ adj[5].push_back(1);// evertime push 1 to 2 (undirectied graph) so u have to have 1-2  thne 2-1 
+ addEdge(adj, 3,4);
+ addEdge(adj, 4,5);
+ for(int v = 0; v<6; v++){
+   cout<<v;
+   for(auto & x: adj[v]){
+     cout<<"->"<<x;
+   }
+   cout<<endl;
+ }
+ 
+}
